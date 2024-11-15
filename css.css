@@ -114,6 +114,14 @@ p {
 
 }
 
+
+@media (max-width: 480px) {
+    main {
+        grid-template-columns: 1fr;  /* 1 coluna em telas pequenas */
+        
+    }
+}
+
 /* Rodapé */
 footer {
     background-color: #333;
