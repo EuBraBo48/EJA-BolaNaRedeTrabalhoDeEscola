@@ -1,0 +1,195 @@
+/* Estilo geral do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    color: #333;
+    background-image: url('https://cdn.pixabay.com/photo/2020/03/30/20/06/solar-panels-4985342_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo mais suave */
+
+
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff6f00;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.rotebar h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.rotebar h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.rotebar h6 {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    flex-direction: row;
+}
+
+/* Coluna da esquerda */
+.content-left {
+    flex: 1; /* 1 1 48% */
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Coluna da direita */
+.content-right {
+    flex: 1 ; /* 1 1 48% */
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos das seções */
+h3 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* Parágrafos e listas */
+ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Estilo das imagens (sem imagens, mas mantendo o layout) */
+.images, .graphs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    p, ul {
+        font-size: 1em;
+    }
+
+    .content-left, .content-right {
+        width: 100%;
+    }
+    .content-left, .content-right {
+        width: 100%;
+    }
+
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/* Estilo das listas */
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Adicionando sombra nas seções */
+.content-left, .content-right {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;  /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /*Sombra suave */
+    
+    
+}
+
+
+.images img {
+    width: 350px;
+    height: 300px;
+}
+
+.graphs img {
+    width: 670px;
+    height: auto;
+}
+
+p, ul, h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+.content-left:hover, .content-right:hover {
+    transform: translateY(-5px); /* Sobe um pouco */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+/* Estilo do botão */
+.btn {
+    display: inline-block;
+    background-color: #ff6f00;  /* Cor de fundo do botão */
+    color: white;               /* Cor do texto */
+    font-size: 1.2em;           /* Tamanho da fonte */
+    padding: 12px 30px;         /* Espaçamento interno do botão */
+    text-align: center;         /* Alinha o texto no centro */
+    text-decoration: none;      /* Remove o sublinhado do link */
+    border-radius: 30px;        /* Borda arredondada */
+    transition: background-color 0.3s, transform 0.2s; /* Animações */
+}
+
+/* Efeito quando o mouse passa sobre o botão (hover) */
+.btn:hover {
+    background-color: #e65100;  /* Cor do botão ao passar o mouse */
+    transform: scale(1.05);      /* Aumenta levemente o tamanho */
+}
+
+/* Efeito quando o botão está pressionado */
+.btn:active {
+    transform: scale(0.98);      /* Diminui levemente o tamanho */
+}
