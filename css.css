@@ -1,203 +1,242 @@
-/* Estilo geral do corpo */
+/* Estilos Gerais */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f1f1f1;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.9)), 
+                url('https://cdn.pixabay.com/photo/2020/03/30/20/06/solar-panels-4985342_960_720.jpg') center/cover no-repeat;
+    background-attachment: fixed; /* Fundo fixo */
     color: #333;
-    background-image: url('https://cdn.pixabay.com/photo/2020/03/30/20/06/solar-panels-4985342_960_720.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.7); /* Fundo mais suave */
-
-
 }
 
 /* Cabeçalho */
 header {
     background-color: #ff6f00;
-    padding: 20px;
+    padding: 30px;
     color: white;
     text-align: center;
+    border-bottom: 5px solid #e65100; /* Linha para dar destaque */
 }
 
 .rotebar h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin: 0;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .rotebar h3 {
-    font-size: 1.5em;
-    margin: 0;
+    font-size: 2.2em;
+    margin: 10px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffd54f; /* Cor mais suave */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.rotebar h6 {
-    font-size: 1em;
-    margin-top: 10px;
-}
-
-/* Container principal */
+/* Layout de colunas */
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    flex-direction: row;
 }
 
-/* Coluna da esquerda */
-.content-left {
-    flex: 1; /* 1 1 48% */
-    padding: 20px;
-    background-color: #ff6f00;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Colunas da esquerda e direita */
+.content-left, .content-right {
+    flex: 1;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Coluna da direita */
-.content-right {
-    flex: 1 ; /* 1 1 48% */
-    padding: 20px;
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.content-left:hover, .content-right:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 1); /* Torna o fundo mais branco ao passar o mouse */
 }
 
 /* Títulos das seções */
 h3 {
-    font-size: 1.8em;
+    font-size: 2.5em;
     color: #333;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ff6f00;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+h3:hover {
+    color: #e65100; /* Muda a cor quando passa o mouse */
 }
 
 /* Parágrafos e listas */
-ul {
-    font-size: 1.1em;
-    line-height: 1.8;
+ul, p {
+    font-size: 1.2em;
+    line-height: 1.6;
     color: #555;
+    letter-spacing: 0.4px;
 }
 
-p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #555;
-}
-
-/* Estilo das imagens (sem imagens, mas mantendo o layout) */
+/* Grid das imagens */
 .images, .graphs {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    h3 {
-        font-size: 1.5em;
-    }
-
-    p, ul {
-        font-size: 1em;
-    }
-
-    .content-left, .content-right {
-        width: 100%;
-    }
-    .content-left, .content-right {
-        width: 100%;
-    }
-
+.images img, .graphs img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px; /* Bordas arredondadas nas imagens */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.images img:hover, .graphs img:hover {
+    transform: scale(1.2); /* Imagem aumenta 20% ao passar o mouse */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Sombra mais forte ao passar o mouse */
+}
 
-@media (max-width: 480px) {
-    main {
-        grid-template-columns: 1fr;  /* 1 coluna em telas pequenas */
-        
-    }
+/* Botões */
+footer .btn {
+    display: inline-block;
+    background-color: #ff6f00;
+    color: white;
+    font-size: 1.4em;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+footer .btn:hover {
+    background-color: #e65100;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer .btn:active {
+    transform: scale(0.98);
 }
 
 /* Rodapé */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+    border-top: 5px solid #e65100;
 }
 
 footer p {
-    font-size: 0.9em;
-}
-
-/* Estilo das listas */
-ul li {
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
     margin-bottom: 10px;
 }
 
-/* Adicionando sombra nas seções */
-.content-left, .content-right {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;  /* Bordas arredondadas */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /*Sombra suave */
-    
-    
-}
-
-
-.images img {
-    width: 350px;
-    height: 300px;
-}
-
-.graphs img {
-    width: 670px;
-    height: auto;
-}
-
-p, ul, h3 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
-}
-
-@keyframes fadeIn {
+/* Animações e transições */
+@keyframes fadeInText {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-
+.fade-in-text {
+    animation: fadeInText 1.2s ease-out forwards;
 }
 
-.content-left:hover, .content-right:hover {
-    transform: translateY(-5px); /* Sobe um pouco */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Estilo do botão */
-.btn {
-    display: inline-block;
-    background-color: #ff6f00;  /* Cor de fundo do botão */
-    color: white;               /* Cor do texto */
-    font-size: 1.2em;           /* Tamanho da fonte */
-    padding: 12px 30px;         /* Espaçamento interno do botão */
-    text-align: center;         /* Alinha o texto no centro */
-    text-decoration: none;      /* Remove o sublinhado do link */
-    border-radius: 30px;        /* Borda arredondada */
-    transition: background-color 0.3s, transform 0.2s; /* Animações */
+h1, h3, h6 {
+    animation: fadeInSlide 1.5s ease-out forwards;
 }
 
-/* Efeito quando o mouse passa sobre o botão (hover) */
-.btn:hover {
-    background-color: #e65100;  /* Cor do botão ao passar o mouse */
-    transform: scale(1.05);      /* Aumenta levemente o tamanho */
+h3, h6 {
+    animation-delay: 0.2s;
 }
 
-/* Efeito quando o botão está pressionado */
-.btn:active {
-    transform: scale(0.98);      /* Diminui levemente o tamanho */
+p, ul {
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.images img, .graphs img {
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+footer {
+    animation: fadeInText 2s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha as colunas */
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    p, ul {
+        font-size: 1.1em;
+    }
+
+    .content-left, .content-right {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .images, .graphs {
+        grid-template-columns: 1fr; /* Coloca as imagens em uma coluna */
+    }
+}
+
+/* Para telas muito pequenas (como celulares antigos) */
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    .rotebar h1 {
+        font-size: 2.5em;
+    }
+
+    .content-left, .content-right {
+        padding: 10px;
+    }
+
+    .images img, .graphs img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 1.1em;
+    }
+
+    footer .btn {
+        font-size: 1.2em;
+        padding: 12px 30px;
+    }
 }
