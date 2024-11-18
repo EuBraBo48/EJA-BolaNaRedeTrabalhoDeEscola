@@ -240,3 +240,8 @@ footer {
         padding: 12px 30px;
     }
 }
+
+b , a {
+    font-size:26px;
+    font-family:' Bold', sans-serif;
+}

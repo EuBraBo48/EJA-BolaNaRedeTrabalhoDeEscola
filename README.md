@@ -5,6 +5,7 @@
 ## Desenvolvedores
 
 - **Nicolas**: Front-End
+- **Barros**: Design
 
 
 
